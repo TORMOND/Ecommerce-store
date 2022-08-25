@@ -23,9 +23,9 @@ res.status(200).json(product)
 
 // Create a Product
 const createProduct = async (req, res) =>{
-  const {title, brands, device, rating, price, img, details} = req.body
+  const {title, brands, device, rating, price, popularity, color, img, details} = req.body
   try{
-    const product = await Product.create({title, brands, device, rating, price, img, details})
+    const product = await Product.create({title, brands, device, rating, price, color, popularity, img, details})
    res.status(200).json(product)
   }catch(error) {
 res.status(400).json({error: error.message})

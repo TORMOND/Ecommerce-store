@@ -19,7 +19,15 @@ const productSchema = new Schema({
     type: Number,
     required: true
   },
+  color:{
+    type: String,
+    required:false
+  },
   price: {
+    type: Number,
+    required: true
+  },
+  popularity:{
     type: Number,
     required: true
   },
