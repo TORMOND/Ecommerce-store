@@ -4,7 +4,8 @@ const {
   getProduct, 
   createProduct, 
   deleteProduct, 
-  updateProduct
+  updateProduct,
+  getSelectedProducts
 } = require('../controllers/storeController')
 
 const router = express.Router()
@@ -23,6 +24,8 @@ router.delete('/:id', deleteProduct)
 
 // UPDATE a Product
 router.patch('/:id', updateProduct)
+
+router.get('/carts', getSelectedProducts)
 
 
 module.exports = router

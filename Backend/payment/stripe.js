@@ -1,15 +1,30 @@
-
+const mongoose = require('mongoose')
+const Product = require('../Schemas/storeSchemas')
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
 const stripe = require("stripe")('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
+const getProduct = async (req, res)=>{ 
+  const { items } = req.body;
+  const product = await Product.findById(items)
+   if(!product){
+  return res.status(404).json({error: 'No such product'})
+  }
+
+const response = res.status(200).json(product)
+return response
+}
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
   // Calculate the order total on the server to prevent
   // people from directly manipulating the amount on the client
-  return items;
+
+ const productPrice =  getProduct().price
+ 
+  
+  return productPrice;
 };
 
 const makePayment = async(req, res)=>{
