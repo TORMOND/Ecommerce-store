@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 const Product = require('../Schemas/storeSchemas')
 require('dotenv').config()
-// This is a public sample test API key.
-// Don’t submit any personally identifiable information in requests made with this key.
-// Sign in to see your own test API key embedded in code samples.
+
+
 const stripe_secret_key = process.env.STRIPE_SECRET_KEY
 const stripe_publishable_key = process.env.STRIPE_PUBLISHABLE_KEY
 const stripe = require("stripe")(stripe_secret_key);
@@ -47,4 +46,5 @@ const makePayment = async(req, res)=>{
 
 
 module.exports = { makePayment }
+
 

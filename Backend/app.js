@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
-const ProductsRoutes = require('./Routes/storeRoutes')
-const userRoutes = require('./routes/userRoutes')
-const stripePaymentRoutes = require('./routes/stripePaymentRoutes')
+const ProductsRoutes = require('./Routes/storeRoutes');
+const userRoutes = require('./routes/userRoutes');
+const stripePaymentRoutes = require('./routes/stripePaymentRoutes');
 
 app.use(express.json())
 
