@@ -23,7 +23,7 @@ res.status(200).json(product)
 // Find a way to populate productsIds from carts
 
 const getSelectedProducts = async(req, res)=>{
-  const { productIds } = req.params
+const { productIds } = req.params
 const response = await Product.find({_id: { $in: productIds }})
 res.status(200).json({response})
 }

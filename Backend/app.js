@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const ProductsRoutes = require('./Routes/storeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const stripePaymentRoutes = require('./routes/stripePaymentRoutes');
+const payInforRoutes = require('./Routes/payInforRoutes');
 
 app.use(express.json())
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 app.use('/api/Products', ProductsRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/payment', stripePaymentRoutes)
+app.use('/api/payInfo', payInforRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
